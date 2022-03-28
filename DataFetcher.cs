@@ -37,6 +37,7 @@ namespace PokeNetApi
                 PropertyNameCaseInsensitive = true
             };
             Pokemon pokemon = await JsonSerializer.DeserializeAsync<Pokemon>(jsonStream, options);
+            Console.WriteLine(pokemon.name);
             return pokemon;
 
         }

@@ -27,7 +27,16 @@ namespace PokeNetApi
         {
 
             string url = (path.Contains(DefaultBaseURL)) ? path : DefaultBaseURL + path;
-            return await client.GetStreamAsync(url);
+            Stream result = null;
+            try
+            {
+                result = await client.GetStreamAsync(url);
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return result;
 
         }
 
