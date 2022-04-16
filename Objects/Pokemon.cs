@@ -10,6 +10,9 @@ using System.Text.Json.Serialization;
 namespace PokeNetApi.Objects
 {
 
+    /// <summary>
+    /// Class to represent the JSON format of the pokemon data from PokeAPI
+    /// </summary>
     public class Pokemon
     {
         public Ability[] abilities { get; set; }

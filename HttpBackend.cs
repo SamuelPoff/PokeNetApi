@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PokeNetApi
 {
+    /// <summary>
+    /// Handles backend http requests to PokeAPI
+    /// </summary>
     public class HttpBackend
     {
 

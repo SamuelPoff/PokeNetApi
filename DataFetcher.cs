@@ -11,16 +11,19 @@ using PokeNetApi.Objects;
 
 namespace PokeNetApi
 {
+    /// <summary>
+    /// Fetches actual object representations of data from PokeAPI
+    /// </summary>
     public class DataFetcher
     {
 
         HttpBackend backend = new HttpBackend();
 
-        public DataFetcher()
-        {
-
-        }
-
+        /// <summary>
+        /// Returns raw string data from a given path in PokeAPI
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public async Task<string> GetDataAsync(string path)
         {
 
@@ -28,6 +31,11 @@ namespace PokeNetApi
 
         }
 
+        /// <summary>
+        /// Returns Pokemon instance of the pokemon at the given path in PokeAPI
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public async Task<Pokemon> GetPokemonAsync(string path)
         {
 
@@ -37,7 +45,6 @@ namespace PokeNetApi
                 PropertyNameCaseInsensitive = true
             };
             Pokemon pokemon = await JsonSerializer.DeserializeAsync<Pokemon>(jsonStream, options);
-            Console.WriteLine(pokemon.name);
             return pokemon;
 
         }
